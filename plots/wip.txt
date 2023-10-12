@@ -1,0 +1,33 @@
+{
+  "data": {
+    "url": "https://raw.githubusercontent.com/maxfordham/tool-usage/master/test_data/data.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {
+      "type": "formula",
+      "expr": "max(datum.DateTime) - min(datum.DateTime)",
+      "as": "time_range"
+    },
+    {
+      "type": "formula",
+      "expr": "count() / time_range",
+      "as": "frequency"
+    }
+],
+  "mark": "bar",
+  "encoding": {
+    "y": {"field": "time_range", "type": "quantitative"},
+    "x": {"field": "Name", "sort": "-y", "type": "ordinal"}
+  },
+  "width": 800,
+  "height": 600,
+  "config": {
+    "view": {
+      "continuousWidth": 600,
+      "continuousHeight": 800
+    }
+  }
+}

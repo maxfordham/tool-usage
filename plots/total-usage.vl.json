@@ -1,0 +1,21 @@
+{
+  "data": {
+    "url": "https://raw.githubusercontent.com/maxfordham/tool-usage/master/test_data/data.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "mark": "bar",
+  "encoding": {
+    "y": {"type": "quantitative", "aggregate": "count"},
+    "x": {"field": "Name", "sort": "-y", "type": "ordinal"}
+  },
+  "width": 800,
+  "height": 600,
+  "config": {
+    "view": {
+      "continuousWidth": 600,
+      "continuousHeight": 800
+    }
+  }
+}
